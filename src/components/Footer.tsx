@@ -85,7 +85,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-300">support@ultimatedeals.com</p>
+                  <p className="text-gray-300">support.ultimatedeals@gmail.com</p>
                   <p className="text-sm text-gray-400">24/7 Support</p>
                 </div>
               </div>
@@ -93,15 +93,15 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-green-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-300">+91 98765 43210</p>
-                  <p className="text-sm text-gray-400">Mon-Fri, 9AM-6PM</p>
+                  <p className="text-gray-300">+91 6303393643</p>
+                  <p className="text-sm text-gray-400">Mon-Sun, 8AM-10PM</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-red-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-300">Mumbai, Maharashtra</p>
+                  <p className="text-gray-300">Hyderabad, Telangana</p>
                   <p className="text-sm text-gray-400">India</p>
                 </div>
               </div>
@@ -150,11 +150,11 @@ const Footer = () => {
           <div className="mt-8 pt-6 border-t border-gray-800">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="bg-gray-800 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-blue-400">50K+</div>
+                <div className="text-2xl font-bold text-blue-400">5K+</div>
                 <div className="text-xs text-gray-400">Happy Customers</div>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-green-400">₹2Cr+</div>
+                <div className="text-2xl font-bold text-green-400">₹20L+</div>
                 <div className="text-xs text-gray-400">Money Saved</div>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg">

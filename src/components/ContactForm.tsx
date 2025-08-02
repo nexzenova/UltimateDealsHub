@@ -56,7 +56,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email Us</h4>
-                    <p className="text-gray-600">support@ultimatedeals.com</p>
+                    <p className="text-gray-600">support.ultimatedeals@gmail.com</p>
                     <p className="text-sm text-gray-500">We reply within 2 hours</p>
                   </div>
                 </div>
@@ -67,8 +67,8 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
-                    <p className="text-gray-600">+91 98765 43210</p>
-                    <p className="text-sm text-gray-500">Mon-Fri, 9AM-6PM IST</p>
+                    <p className="text-gray-600">+91 6303393643</p>
+                    <p className="text-sm text-gray-500">Mon-Sun, 9AM-6PM IST</p>
                   </div>
                 </div>
                 
@@ -89,7 +89,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Office</h4>
-                    <p className="text-gray-600">Mumbai, Maharashtra</p>
+                    <p className="text-gray-600">Hyderabad, Telangana</p>
                     <p className="text-sm text-gray-500">India</p>
                   </div>
                 </div>
