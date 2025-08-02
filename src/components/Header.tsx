@@ -36,9 +36,9 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     setSearchQuery(query);
-    
+
     if (query.length > 2) {
-      const filtered = mockSuggestions.filter(item => 
+      const filtered = mockSuggestions.filter(item =>
         item.toLowerCase().includes(query.toLowerCase())
       );
       setSearchSuggestions(filtered.slice(0, 5));
@@ -73,20 +73,35 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
   return (
     <>
       {/* Top Promotional Banner */}
-      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white text-center py-2 text-sm font-medium relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative z-10 flex items-center justify-center space-x-2">
-          <Zap className="h-4 w-4 animate-pulse" />
-          <span className="font-bold">🔥 MEGA SALE ALERT!</span>
-          <span className="hidden sm:inline">Big Billion Days + Great Indian Festival LIVE!</span>
-          <span className="font-bold">Up to 80% OFF + Extra Bank Offers</span>
-          <TrendingUp className="h-4 w-4 animate-bounce" />
-        </div>
-      </div>
+<div className="relative overflow-hidden bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white text-center py-2 px-4">
 
-      <header className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-xl border-b border-gray-200 backdrop-blur-sm bg-white/95' : 'shadow-lg'
-      }`}>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black opacity-10"></div>
+
+  {/* First promo line */}
+  <div className="relative z-10 flex items-center justify-center space-x-4 text-sm font-medium">
+    <Zap className="h-5 w-5 animate-pulse" />
+    <span className="font-bold">🔥 MEGA SALE ALERT!</span>
+    <span className="hidden sm:inline">Big Billion Days + Great Indian Festival LIVE!</span>
+    <span className="font-bold">Up to 80% OFF + Extra Bank Offers</span>
+    <TrendingUp className="h-5 w-5 animate-bounce" />
+  </div>
+
+  {/* Spacing between lines */}
+  <div className="my-1" />
+
+  {/* Second promo line */}
+{/* // React component snippet (adjust imports for icons as needed) */}
+<div className="relative z-10 flex items-center justify-center space-x-3 text-sm font-semibold">
+  <span className="font-bold tracking-wide">
+    <span className="inline-block animate-heat">🔥</span> India's #1 Deal Platform
+  </span>
+</div>
+
+</div>
+
+      <header className={`bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-xl border-b border-gray-200 backdrop-blur-sm bg-white/95' : 'shadow-lg'
+        }`}>
         {/* Main Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -104,12 +119,17 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                 </div>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Ultimate Deals
+                <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Ultimate Deals <br />
+                  <span className="flex items-center space-x-3">
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      HUB
+                    </span>
+                    <p className="text-xs text-gray-500 font-medium whitespace-nowrap m-0">
+                      India's #1 Deal Platform
+                    </p>
+                  </span>
                 </h1>
-                <p className="text-xs text-gray-500 font-medium -mt-1">
-                  India's #1 Deal Platform
-                </p>
               </div>
             </div>
 
@@ -127,13 +147,13 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                   className="w-full px-5 py-3 pl-12 pr-32 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 hover:bg-white transition-all duration-200 text-gray-700 placeholder-gray-400 group-hover:shadow-md"
                 />
                 <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 group-hover:text-blue-500 transition-colors" />
-                <button 
+                <button
                   onClick={() => handleSearch()}
                   className="absolute right-2 top-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   Search Deals
                 </button>
-                
+
                 {/* Search Suggestions Dropdown */}
                 {showSearchSuggestions && searchSuggestions.length > 0 && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 max-h-80 overflow-y-auto">
@@ -171,7 +191,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                   <span className="text-sm font-medium">Account</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                
+
                 {/* Dropdown Menu */}
                 <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="p-2">
@@ -206,7 +226,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                 className="w-full px-4 py-3 pl-11 pr-20 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
               />
               <Search className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
-              <button 
+              <button
                 onClick={() => handleSearch()}
                 className="absolute right-2 top-1.5 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
               >
@@ -221,7 +241,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="hidden md:flex items-center justify-between py-4">
               <div className="flex items-center space-x-8">
-                <button 
+                <button
                   onClick={() => {
                     document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -242,7 +262,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current group-hover:w-full transition-all duration-300"></span>
                   </button>
                 ))}
-                
+
                 {/* Categories Mega Menu */}
                 <div className="relative group">
                   <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-semibold transition-colors">
@@ -251,42 +271,42 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                   </button>
                   <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     <div className="p-6 grid grid-cols-2 gap-4">
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('phones')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
                         <span className="text-lg">📱</span>
                         <span>Mobiles & Tablets</span>
                       </button>
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('fashion')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
                         <span className="text-lg">👕</span>
                         <span>Fashion</span>
                       </button>
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('electronics')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
                         <span className="text-lg">💻</span>
                         <span>Electronics</span>
                       </button>
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('home')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
                         <span className="text-lg">🏠</span>
                         <span>Home & Kitchen</span>
                       </button>
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('beauty')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
                         <span className="text-lg">💄</span>
                         <span>Beauty & Care</span>
                       </button>
-                      <button 
+                      <button
                         onClick={() => onCategorySelect?.('sports')}
                         className="flex items-center space-x-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors"
                       >
@@ -297,7 +317,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Right Side Navigation */}
               <div className="flex items-center space-x-6 text-sm font-medium">
                 <div className="flex items-center space-x-2 text-red-600 bg-red-50 px-3 py-1 rounded-full">
@@ -313,7 +333,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
             {isMenuOpen && (
               <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
                 <div className="px-4 py-4 space-y-3">
-                  <button 
+                  <button
                     onClick={() => {
                       document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
                       setIsMenuOpen(false);
@@ -334,7 +354,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                       {platform.name}
                     </button>
                   ))}
-                  <button 
+                  <button
                     onClick={() => {
                       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                       setIsMenuOpen(false);
@@ -343,12 +363,12 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                   >
                     Contact
                   </button>
-                  
+
                   {/* Mobile Categories */}
                   <div className="pt-4 border-t border-gray-200">
                     <h4 className="px-4 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wide">Categories</h4>
                     <div className="space-y-1">
-                      <button 
+                      <button
                         onClick={() => {
                           onCategorySelect?.('phones');
                           setIsMenuOpen(false);
@@ -357,7 +377,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                       >
                         📱 Mobiles & Tablets
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           onCategorySelect?.('fashion');
                           setIsMenuOpen(false);
@@ -366,7 +386,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onCategorySelect }) => {
                       >
                         👕 Fashion
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           onCategorySelect?.('electronics');
                           setIsMenuOpen(false);

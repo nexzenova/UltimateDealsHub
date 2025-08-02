@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes heatFlicker {
+  0%, 100% {
+    text-shadow:
+      0 0 6px #ff6400,
+      0 0 12px #ff7a00,
+      0 0 18px #ff8f00,
+      0 0 24px #ffae00,
+      0 0 30px #ffc300;
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px #ff8a00);
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ff4e00,
+      0 0 15px #ff7300,
+      0 0 22px #ff7f00,
+      0 0 30px #ffac00,
+      0 0 38px #ffcc00;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 4px #ffb400);
+  }
+}
+.animate-heat {
+  animation: heatFlicker 1.2s ease-in-out infinite;
+  display: inline-block;
+  /* Optional: add slightly stronger color */
+  color: #ff5800;
+}
